@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:name="android:windowBackgroundBlurRadius">30dp</item>
+    <item android:name="android:windowBlurBehindEnabled">true</item>
+    <item android:name="android:windowBlurBehindRadius">10dp</item>
+</style>
