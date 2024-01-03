@@ -9,6 +9,5 @@ class AddContact : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_contact)
 
-        // You can perform additional setup for AnotherActivity if needed
     }
 }

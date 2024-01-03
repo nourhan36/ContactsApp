@@ -22,6 +22,7 @@
         android:layout_marginStart="18dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +45,7 @@
         app:rippleColor="@color/green"
         app:hoveredFocusedTranslationZ="2dp"
         android:outlineSpotShadowColor="@color/black"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
