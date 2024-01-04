@@ -74,12 +74,26 @@ class MainActivity : AppCompatActivity() {
                             )
                         )
                         adapter.notifyItemInserted(contactList.size - 1)
-                        Toast.makeText(
-                            this@MainActivity,
-                            "Contact Added Successfully",
-                            Toast.LENGTH_SHORT
-                        ).show()
                         addContactDialog.dismiss()
+                    } else if (!validateName(etName.text.toString()) || !validatePhoneNumber(etPhone.text.toString())) {
+                        if (!validateName(etName.text.toString()) && !validatePhoneNumber(etPhone.text.toString()))
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Please enter contact data",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        else if (!validatePhoneNumber(etPhone.text.toString()))
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Please enter a valid phone number",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        else if (!validateName(etName.text.toString()))
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Please enter at least 3 characters",
+                                Toast.LENGTH_SHORT
+                            ).show()
                     }
                 }
                 addContactDialog.show()
