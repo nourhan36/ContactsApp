@@ -7,14 +7,14 @@
     android:background="@color/bg_color">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:contentDescription="TODO"
         android:outlineSpotShadowColor="@color/black"
-        android:src="@drawable/add"
+        android:src="@drawable/back"
         app:backgroundTint="@color/green"
         app:hoveredFocusedTranslationZ="2dp"
         app:layout_constraintStart_toStartOf="parent"

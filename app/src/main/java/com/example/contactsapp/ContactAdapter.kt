@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 class ContactAdapter(val contacts: List<Contact>):
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 
-    override fun getItemCount(): Int = contacts.size
+    override fun getItemCount(): Int = contacts?.size ?: 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_contact , parent , false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.activity_contact, parent, false)
         return ViewHolder(view)
     }
 
@@ -23,9 +24,20 @@ class ContactAdapter(val contacts: List<Contact>):
             holder.userName.text = contact?.userName
             holder.phone.text = contact?.phone
         }
+        if (onContactClickListener != null) {
+            holder.itemView.setOnClickListener {
+                onContactClickListener?.onItemClick(position, contact)
+            }
+        }
     }
 
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    var onContactClickListener: onItemClickListener? = null
+
+    interface onItemClickListener {
+        fun onItemClick(position: Int, contact: Contact)
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val contactImage: ImageView = itemView.findViewById(R.id.contact_image)
         val userName: TextView = itemView.findViewById(R.id.name)
         val phone: TextView = itemView.findViewById(R.id.phone)

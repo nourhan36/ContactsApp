@@ -11,4 +11,20 @@
     </style>
 
     <style name="Theme.ContactsApp" parent="Base.Theme.ContactsApp" />
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textColorPrimary">@color/green</item>
+        <!--<item name="android:background">@color/darkBackground</item>-->
+        <item name="android:textAllCaps">false</item>
+        <!--<item name="android:colorBackground">@color/darkBackground</item>-->
+        <item name="textColorAlertDialogListItem">@color/green</item>
+        <item name="colorControlNormal">@color/green</item>
+        <!-- colorPrimarySecond used because colorPrimary fails for no reason -->
+        <item name="colorControlActivated">?attr/colorPrimary</item>
+
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+        <item name="android:windowBackground">@color/bg_color</item>
+    </style>
 </resources>
