@@ -4,4 +4,7 @@
     <string name="add_contact">Add Contact</string>
     <string name="add">add</string>
     <string name="cancel">cancel</string>
+    <string name="name">Name:</string>
+    <string name="phone">Phone:</string>
+    <string name="description">Description:</string>
 </resources>

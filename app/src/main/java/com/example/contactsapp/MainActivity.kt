@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
         var btn: FloatingActionButton = findViewById(R.id.btn_add)
         btn.setOnClickListener({
-
+            
         }
         )
     }

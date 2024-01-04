@@ -70,7 +70,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_add"
-        android:layout_width="wrap_content"
+        android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
         android:backgroundTint="@color/pink"
@@ -85,7 +85,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
         android:backgroundTint="@color/pink"
