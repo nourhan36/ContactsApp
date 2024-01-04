@@ -22,7 +22,9 @@ data class Contact(
         dest.writeString(description)
     }
 
-    override fun describeContents(): Int = 0
+    override fun describeContents(): Int {
+        return 0
+    }
 
     companion object CREATOR : Parcelable.Creator<Contact> {
         override fun createFromParcel(parcel: Parcel): Contact {

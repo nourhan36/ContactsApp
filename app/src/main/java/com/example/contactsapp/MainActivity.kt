@@ -12,15 +12,15 @@ import com.example.contactsapp.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
-    lateinit var adapter: ContactAdapter
-    lateinit var contactList: MutableList<Contact>
-    lateinit var btnAdd: FloatingActionButton
-    lateinit var btnSave: Button
-    lateinit var btnCancel: Button
-    lateinit var etName: EditText
-    lateinit var etPhone: EditText
-    lateinit var etDescription: EditText
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: ContactAdapter
+    private lateinit var contactList: MutableList<Contact>
+    private lateinit var btnAdd: FloatingActionButton
+    private lateinit var btnSave: Button
+    private lateinit var btnCancel: Button
+    private lateinit var etName: EditText
+    private lateinit var etPhone: EditText
+    private lateinit var etDescription: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         contactList = mutableListOf()
         adapter = ContactAdapter(contactList)
         binding.rvContact.adapter = adapter
-        adapter.onContactClickListener = object : ContactAdapter.onItemClickListener {
+        adapter.onContactClickListener = object : ContactAdapter.OnItemClickListener {
             override fun onItemClick(position: Int, contact: Contact) {
                 val intent = Intent(this@MainActivity, DetailsContactActivity::class.java)
                 intent.putExtra("contact", contact)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun addContact() {
+    private fun addContact() {
         btnAdd = findViewById(R.id.btn_add_contact)
         binding.apply {
             btnAdd.setOnClickListener {
@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                                 etDescription.text.toString()
                             )
                         )
+                        adapter.notifyItemInserted(contactList.size - 1)
                         Toast.makeText(
                             this@MainActivity,
                             "Contact Added Successfully",
@@ -86,11 +87,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validateName(name: String): Boolean {
+    private fun validateName(name: String): Boolean {
         return name.trim().isNotEmpty() && name.length >= 3
     }
 
-    fun validatePhoneNumber(phoneNumber: String): Boolean {
+    private fun validatePhoneNumber(phoneNumber: String): Boolean {
         val regex = Regex("^01\\d{9}$")
         return regex.matches(phoneNumber)
     }
